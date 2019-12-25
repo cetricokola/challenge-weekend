@@ -1,0 +1,17 @@
+<%- include ('includes/nav.ejs'); -%>
+<div class="ml-auto mr-auto col-md-6">
+    <h1 class="text-primary my-5">Add Subject</h1>
+    <form method="post" action="/add_subject">
+        <div class="form-group">
+            <label for="code">Subject Code</label>
+            <input type="text" class="form-control" id="code" name="code">
+        </div>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name">
+        </div>
+        <button type="submit" class="btn btn-primary px-5">Submit</button>
+    </form>
+</div>
+</body>
+</html>
