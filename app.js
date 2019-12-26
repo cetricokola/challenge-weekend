@@ -5,7 +5,7 @@ const mysql = require('mysql');
 const path = require('path');
 const app = express();
 const port = 5000;
-const {getHomePage, getSubjectPage, getSchedulePage, viewSchedule} = require('./src/router/index');
+const {getHomePage, getSubjectPage, getSchedulePage, viewSchedule,  deleteSchedule} = require('./src/router/index');
 const {addTeachers} = require('./src/router/teachers');
 const {addSubject} = require('./src/router/subject');
 const {createSchedule} = require('./src/router/schedule');
@@ -43,7 +43,7 @@ app.get('/view_schedule', viewSchedule);
 app.post('/add_teacher', addTeachers);
 app.post('/add_subject', addSubject);
 app.post('/create_schedule', createSchedule);
-
+app.get('/delete_schedule/ :id', deleteSchedule);
 
 app.listen(port, () => {
     console.log(`Server running on port: ${port}`);

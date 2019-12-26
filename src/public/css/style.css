@@ -1,0 +1,11 @@
+body {
+  background-color: whitesmoke;
+}
+body nav .brand {
+  font-size: 50px;
+}
+body nav div {
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,31 +1,52 @@
 <%- include ('includes/nav.ejs'); -%>
-<div class="ml-auto mr-auto col-md-6">
-    <h1 class="text-primary my-5">Create A Schedule</h1>
-    <form method="post" action="/create_schedule">
-        <div class="row">
-            <div class="form-group col-md-6">
-                <label for="code">Subject Code</label>
-                <select class="form-control" id="code">
-                    <option>--code--</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-            <div class="form-group col-md-6">
-                <label for="name">Teacher's Name</label>
-                <select class="form-control" id="name">
-                    <option>--name--</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-        </div>
-        <button type="submit" class="btn btn-primary btn-block px-5">Submit</button>
-    </form>
+<div class="container ">
+    <h1 class="text-primary my-5">View Schedule</h1>
+<div class="row">
+    <div class="col-md-4">
+        <% if (subjects.length > 0) { %>
+            <table class="table">
+                <thead class="">
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Subject Name</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% subjects.forEach((subject, index) => { %>
+                    <tr>
+                        <td><%= subject.code %></td>
+                        <td><%= subject.name %></td>
+                    </tr>
+                <% }) %>
+                </tbody>
+            </table>
+        <% } %>
+    </div>
+    <div class="ml-auto mr-auto col-md-6">
+        <% if (schedules.length > 0) { %>
+            <table class="table">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Teacher's Name</th>
+                    <th scope="col">Subject Code</th>
+                    <th scope="col">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% schedules.forEach((schedule, index) => { %>
+                    <tr>
+                        <td><%= schedule.id %></td>
+                        <td><%= schedule.teacher_name %></td>
+                        <td><%= schedule.subject_code %></td>
+                        <td><a href="/delete_schedule/<%= schedule.id %>" class="btn bg-danger text-white">Delete Schedule</a></td>
+                    </tr>
+                <% }) %>
+                </tbody>
+            </table>
+        <% } %>
+    </div>
+</div>
 </div>
 </body>
 </html>

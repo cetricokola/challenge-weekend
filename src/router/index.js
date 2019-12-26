@@ -6,33 +6,59 @@ module.exports = {
         res.render('subject.ejs', {title: "Welcome to Cytonn School | Add Subjects"});
     },
     getSchedulePage: (req, res) => {
-        let codes = [];
-        let names = [];
-        let query = "SELECT name FROM teachers; SELECT code FROM subjects";
-
-        db.query(query, [2, 1], function (error, results, fields) {
-            if (error) {
-                throw error;
+        let query = "SELECT * FROM `teachers`";
+        let query1 = "SELECT * FROM `subjects`";
+        db.query(query, function (err, result) {
+            if (err) {
+                throw err;
             }
-            res.render('schedule.ejs', {
-                title: "Welcome to Cytonn School | Create Schedule",
-                codes: results[1],
-                names: results[0]
+            db.query(query1, function (error, results) {
+                if (error) {
+                    throw error;
+                }
+                res.render('schedule.ejs', {
+                    title: "Welcome to Cytonn School | Create Schedule",
+                    codes: results,
+                    names: result
+
+                });
+                console.log("codes");
+                console.log(results);
+                console.log("names");
+                console.log(result);
             });
-            console.log(results[0]);
-            console.log(results[1]);
         });
+
     },
     viewSchedule: (req, res) => {
         let query = "SELECT * FROM schedules";
+        let query1 = "SELECT * FROM subjects";
         db.query(query, (err, result) => {
             if (err) {
                 return res.status(500).send(err);
             }
-            res.render('view_schedule.ejs', {
-                title: "Welcome to Cytonn School | View Schedules",
-                data: result
+            db.query(query1, (err, results) => {
+                if (err) {
+                    return res.status(500).send(err);
+                }
+                res.render('view_schedule.ejs', {
+                    title: "Welcome to Cytonn School | View Schedules",
+                    schedules: result,
+                    subjects: results
+                });
             });
+
+        });
+    },
+    deleteSchedule: (req, res) => {
+        let id = req.params.id;
+        let query = "DELETE FROM schedules WHERE `id` = id";
+        db.query(query, (err, result) => {
+            if (err) {
+                console.log(err);
+                // return res.status(500).send(err);
+            }
+            res.redirect('/view_schedule');
         });
     }
 };
