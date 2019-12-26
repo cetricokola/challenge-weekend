@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="399ec703-9a94-46db-96fc-fa2a8fb11b8e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/css/style.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/events.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/includes/nav.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/includes/nav.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/schedule.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/schedule.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/view_schedule.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/view_schedule.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +35,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -71,7 +67,7 @@
       <option name="presentableId" value="Default" />
       <updated>1577177004600</updated>
       <workItem from="1577177006576" duration="6328000" />
-      <workItem from="1577185649056" duration="24777000" />
+      <workItem from="1577185649056" duration="25736000" />
     </task>
     <servers />
   </component>
